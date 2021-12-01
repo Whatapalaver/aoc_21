@@ -7,8 +7,9 @@ sample_input = ["199", "200", "208", "210", "200", "207", "240", "269", "260", "
 
 
 def test_part1():
-    assert part1.result(None) == None
     assert part1.result(sample_input) == 7
+    assert part1.alt_zip_result(sample_input) == 7
+    assert part1.alt_zip_sum_result(sample_input) == 7
 
 
 #

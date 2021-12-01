@@ -4,6 +4,16 @@ A template for [Advent of Code](https://adventofcode.com) written in Python. The
 
 ## Usage
 
+### When running from the terminal with Docker
+
+- To generate your container and open the terminal run `make run`
+
+- Commands can then be run directly from this prompt:
+
+    - I've removed the resources so you will need to run the generate day01 instruction first, to generate file structure `python -m aoc.gen day01`
+    - To test day01 `pytest tests/test_day01.py`
+    - To run your output `python -m aoc.day01`
+
 ### Original Instructions
 
 The project use [poetry](https://python-poetry.org) for project management.
@@ -20,16 +30,6 @@ Clone this repository and run `poetry install` for install dependencies:
 
     # run the day01
     # poetry run python -m aoc.day01
-
-### When running from the terminal with Docker
-
-- To generate your container and open the terminal run `make run`
-
-- Commands can then be run directly from this prompt:
-
-    - I've removed the resources so you will need to run the generate day01 instruction first, to generate file structure `python -m aoc.gen day01`
-    - To test day01 `pytest tests/test_day01.py`
-    - To run your output `python -m aoc.day01`
 
 ## Generate
 
