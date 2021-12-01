@@ -129,9 +129,7 @@ def main():
 
     year, session = get_env()
     input_path = "../{}/resources/input.txt".format(module_name)
-    input2_path = "../{}/resources/input2.txt".format(module_name)
     gen_input(input_path, year, day, session)
-    gen_input(input2_path, year, day, session=None)
     gen_template(templates, paths, {"module_name": module_name, "day": day})
 
 
