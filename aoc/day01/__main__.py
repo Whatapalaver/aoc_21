@@ -13,14 +13,13 @@ def read_file(filename):
 
 
 def main():
-    input1 = read_file("./resources/input.txt")
-    input2 = read_file("./resources/input2.txt")
+    input = read_file("./resources/input.txt")
 
     print("--- Part One ---")
-    print("Result:", part1.result(input1))
+    print("Result:", part1.result(input))
 
     print("--- Part Two ---")
-    print("Result:", part2.result(input2))
+    print("Result:", part2.result(input))
 
 
 if __name__ == "__main__":
