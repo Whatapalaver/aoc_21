@@ -6,7 +6,7 @@ run: build
 	docker run --rm -it --name py_docker_aoc_app \
 		--env-file=.env \
 		-v $(CURDIR):/app \
-		py_aoc:dev
+		py_docker_aoc:dev
 
 # Get additional shell in the running container by `make run`
 shell:

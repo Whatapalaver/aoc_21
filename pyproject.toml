@@ -5,7 +5,7 @@ description = "Docker Python template for Advent of Code event"
 authors = ["Leonardo Gago <ljgago@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.10"
 colorama = "^0.4.4"
 python-dotenv = "^0.19.1"
 requests = "^2.26.0"
