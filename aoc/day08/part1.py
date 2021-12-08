@@ -1,5 +1,5 @@
 # Advent of Code - Day 8 - Part One
-import re
+
 from collections import Counter
 
 # Unique patterns
