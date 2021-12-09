@@ -71,6 +71,8 @@ def find_basin(grid, minimum_point):
                 if grid[col_n][row_n] < 9
             ]
         )
+        # union operator with assignment - so queue is now reassigned and joined
+        # with the nearest neighbours that have not already been visited
         queue |= nearest_neighbour_lows - basin
     return basin
 
