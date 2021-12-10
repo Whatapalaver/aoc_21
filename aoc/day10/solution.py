@@ -1,13 +1,56 @@
-# Advent of Code - Day 10 - Part Two
+# Advent of Code - Day 10
 
 
-def incorrect_open_close(open_and_shut, openers, closers, row):
+def parse(input):
+    return [[char for char in row] for row in input]
+
+
+def corrupt_closer(open_and_shut, row):
+    """Returns boolean indicating corruptness and first corrupt closer"""
+    openers = open_and_shut.keys()
+    closers = open_and_shut.values()
+
     openers_stack = []
-    invalid_closer = []
+
     for char in row:
         if char in openers:
             openers_stack.append(char)
         elif char in closers:
+            if not openers_stack:
+                return True, char
+            else:
+                last_unclosed_opener = openers_stack.pop()
+                if not open_and_shut[last_unclosed_opener] == char:
+                    return True, char
+    return False, None
+
+
+def score_invalid_closers(invalid_closers):
+    points = {")": 3, "]": 57, "}": 1197, ">": 25137}
+
+    return sum([points[closer] for closer in invalid_closers])
+
+
+def result_part1(input):
+    data = parse(input)
+    open_and_shut = {"(": ")", "[": "]", "{": "}", "<": ">"}
+    invalid_closers = []
+    for row in data:
+        corrupt, char = corrupt_closer(open_and_shut, row)
+        if corrupt:
+            invalid_closers.append(char)
+    return score_invalid_closers(invalid_closers)
+
+
+def incorrect_open_close(open_and_shut, row):
+    opener_keys = open_and_shut.keys()
+    closer_keys = open_and_shut.values()
+    openers_stack = []
+    invalid_closer = []
+    for char in row:
+        if char in opener_keys:
+            openers_stack.append(char)
+        elif char in closer_keys:
             if not openers_stack:
                 invalid_closer.append(char)
             else:
@@ -28,20 +71,13 @@ def score_unmatched_openers(matching_pairs, unmatched_openers):
     return total_score
 
 
-def parse(input):
-    return [[char for char in row] for row in input]
-
-
-def result(input):
+def result_part2(input):
     data = parse(input)
     open_and_shut = {"(": ")", "[": "]", "{": "}", "<": ">"}
-    opener_keys = open_and_shut.keys()
-    closer_keys = open_and_shut.values()
+
     scores = []
     for row in data:
-        invalid_closer, unmatched_openers = incorrect_open_close(
-            open_and_shut, opener_keys, closer_keys, row
-        )
+        invalid_closer, unmatched_openers = incorrect_open_close(open_and_shut, row)
         if invalid_closer:
             continue
         else:
@@ -66,4 +102,5 @@ sample_input = [
 input = sample_input
 
 # print(parse(input))
-# print(result(input))
+print(result_part1(input))
+print(result_part2(input))
