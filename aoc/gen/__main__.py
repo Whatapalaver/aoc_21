@@ -113,16 +113,14 @@ def main():
 
     templates = [
         "./templates/__main__.tpl",
-        "./templates/part1.tpl",
-        "./templates/part2.tpl",
+        "./templates/solution.tpl",
         "./templates/readme.tpl",
         "./templates/test_day.tpl",
     ]
 
     paths = [
         "../{}/__main__.py",
-        "../{}/part1.py",
-        "../{}/part2.py",
+        "../{}/solution.py",
         "../{}/README.md",
         "../../tests/test_{}.py",
     ]

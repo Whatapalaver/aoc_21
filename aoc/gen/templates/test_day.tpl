@@ -1,15 +1,15 @@
-from aoc.$module_name import part1, part2
+from aoc.$module_name import solution
 
 #
 # --- Part One ---
 #
 
 def test_part1():
-    assert part1.result(None) == None
+    assert solution.result_part1(None) == None
 
 #
 # --- Part Two ---
 #
 
 def test_part2():
-    assert part2.result(None) == None
+    assert solution.result_part2(None) == None

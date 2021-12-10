@@ -2,7 +2,7 @@
 
 from pathlib import Path
 
-from aoc.$module_name import part1, part2
+from aoc.$module_name import solution
 
 def read_file(filename):
     path = Path(__file__).parent.resolve()
@@ -14,10 +14,10 @@ def main():
     input = read_file("./resources/input.txt")
 
     print("--- Part One ---")
-    print("Result:", part1.result(input))
+    print("Result:", solution.result_part1(input))
 
     print("--- Part Two ---")
-    print("Result:", part2.result(input))
+    print("Result:", solution.result_part2(input))
 
 if __name__ == "__main__":
     main()
